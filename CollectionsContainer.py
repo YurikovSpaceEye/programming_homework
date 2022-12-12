@@ -24,12 +24,6 @@ class Collections:
 
         self.data[category].append(item)
 
-    def get_collection_item(self, category: str, idx: int) -> T:
-        if len(self.data[category]) <= idx:
-            return None
-
-        return self.data[category][idx]
-
     def get_collection(self, category: str) -> List[CollectionItem]:
         if category != "всё":
             return self.data[category]
@@ -55,12 +49,6 @@ class Collections:
         data = self.get_collection(category)
         data.sort(key=lambda x: calendar.timegm(x.date.timetuple()), reverse=btos)
         return data
-
-    def remove_collection_item(self, category:str, item:CollectionItem):
-        self.data[category].remove(item)
-
-        if len(self.data[category]) == 0:
-            del self.data[category]
 
     def save_to_json_str(self) -> str:
         temp = dict()
