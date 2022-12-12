@@ -27,7 +27,8 @@ def change_sort(collection: Collections, current_category, sort_by_cost, big_to_
 
     inpt = input("Поменять тип сортировки? д/н. ")
     if inpt.lower() == "д":
-        inpt = input("1. Сортировка по цене.\n2. Сортировка по дате.\n")
+        inpt = input("1. Сортировка по цене.\n"
+                     "2. Сортировка по дате.\n")
         if inpt == "1":
             sort_by_cost = True
         elif inpt == "2":
