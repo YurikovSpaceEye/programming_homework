@@ -11,6 +11,7 @@ def get_user_cost():
             return int(inpt)
         except:
             print("Неверная цена предмета.\n")
+            raise Exception
 
 
 def get_user_date():
@@ -42,16 +43,16 @@ def get_user_date():
 
 
 def get_user_category(categories: List[str]):
-        print(f"Сущестующие категории ({len(categories)}):\n")
-        for i, item in enumerate(categories):
-            print(f"{i+1}. {item}")
-        print("")
         inpt = input("1. Выбрать из сущесвующей категории\n"
                      "2. Создать новую категорию\n")
         if inpt == "1":
             if (len(categories) == 0):
                 print("Нет категорий для выбора.")
                 raise Exception
+            print(f"Сущестующие категории ({len(categories)}):\n")
+            for i, item in enumerate(categories):
+                print(f"{i + 1}. {item}")
+            print("")
 
             inpt = input("Напишите номер категории: ")
             try:

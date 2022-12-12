@@ -35,3 +35,10 @@ def delete_item(collection:Collections, current_category:str, sort_by_cost:bool,
                         return
     else:
         data.remove(data[num-1])
+
+        if len(data) == 0:
+            del data
+            for key in collection.data.keys():
+                if len(collection.data[key]) == 0:
+                    collection.data.pop(key, None)
+                    break
