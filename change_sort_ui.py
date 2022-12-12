@@ -2,10 +2,10 @@ from CollectionsContainer import Collections
 
 
 def change_sort(collection: Collections, current_category, sort_by_cost, big_to_small):
+    inpt = input("Поменять категорию? д/н. ")
     available_categories = ["всё"]
     available_categories += collection.get_categories()
 
-    inpt = input("Поменять категорию? д/н. ")
     if inpt.lower() == "д":
         print("Доступные категории:")
         for i, item in enumerate(available_categories):
