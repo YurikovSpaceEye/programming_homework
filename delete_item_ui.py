@@ -22,7 +22,7 @@ def delete_item(collection:Collections, current_category:str, sort_by_cost:bool,
         element = data[num-1]
         for category in collection.data.values():
             for item in category:
-                if item.__hash__() == element.__hash__():
+                if id(item) == id(element):
                     category.remove(item)
                     if len(category) == 0:
                         del category
