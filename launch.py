@@ -26,7 +26,8 @@ def main(collection: Collections):
         if answ == "1":
             display_items(collection, current_category, sort_by_cost, big_to_small)
         elif answ == "2":
-            current_category, sort_by_cost, big_to_small = change_sort(collection, current_category, sort_by_cost, big_to_small)
+            current_category, sort_by_cost, big_to_small = \
+                change_sort(collection, current_category, sort_by_cost, big_to_small)
             pass
         elif answ == "3":
             add_item(collection)

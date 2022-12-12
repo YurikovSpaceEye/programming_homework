@@ -64,7 +64,11 @@ def get_user_category(categories: List[str]):
                 raise Exception
             return categories[num-1]
         elif inpt == "2":
-            return input("Напишите новую категорию: ")
+            inpt = input("Напишите новую категорию: ")
+            if inpt in categories or inpt == "всё":
+                print("Уже есть такая категория.")
+                raise Exception
+            return inpt
         else:
             print("Неверный выбор.")
 
