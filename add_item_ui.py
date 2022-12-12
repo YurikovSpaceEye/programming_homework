@@ -81,6 +81,6 @@ def add_item(collection: Collections):
         category = get_user_category(collection.get_categories())
 
         new_item = CollectionItem(name, cost, date)
-        collection.add_to_collection(category, new_item)
+        collection.add_to_category(category, new_item)
     except:
         return

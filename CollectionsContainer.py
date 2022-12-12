@@ -18,13 +18,13 @@ class Collections:
     def __init__(self):
         self.data: Dict[AnyStr, List[CollectionItem]] = dict()
 
-    def add_to_collection(self, category: str, item: CollectionItem):
+    def add_to_category(self, category: str, item: CollectionItem):
         if category not in self.data.keys():
             self.data[category] = []
 
         self.data[category].append(item)
 
-    def get_collection(self, category: str) -> List[CollectionItem]:
+    def get_category(self, category: str) -> List[CollectionItem]:
         if category != "всё":
             return self.data[category]
         else:
@@ -41,12 +41,12 @@ class Collections:
         return data
 
     def get_sorted_category_by_cost(self, category: str, btos: bool) -> List[CollectionItem]:
-        data = self.get_collection(category)
+        data = self.get_category(category)
         data.sort(key=lambda x: x.cost, reverse=btos)
         return data
 
     def get_sorted_category_by_time(self, category:str, btos:bool) -> List[CollectionItem]:
-        data = self.get_collection(category)
+        data = self.get_category(category)
         data.sort(key=lambda x: calendar.timegm(x.date.timetuple()), reverse=btos)
         return data
 
