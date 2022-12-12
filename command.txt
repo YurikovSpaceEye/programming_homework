@@ -1,2 +1,0 @@
-uic -g python mainwindow.ui -o MainWindowUI.py
-uic -g python CItemUI.ui -o CItemUI.py
